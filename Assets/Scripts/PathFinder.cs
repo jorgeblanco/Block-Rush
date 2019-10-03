@@ -14,7 +14,17 @@ public class PathFinder : MonoBehaviour
     private readonly Dictionary<Vector2Int, Waypoint> _grid = new Dictionary<Vector2Int, Waypoint>();
     private readonly Dictionary<Vector2Int, Waypoint> _exploredGrid = new Dictionary<Vector2Int, Waypoint>();
     private readonly Queue<Waypoint> _queue = new Queue<Waypoint>();
-    private bool _isRunning = true;
+    private State _state = State.PathFinding;
+    private readonly List<Waypoint> _path = new List<Waypoint>();
+    private EnemyMovement _enemyMovement;
+    
+    enum State
+    {
+        Idle,
+        PathFinding,
+        PathFound,
+        PathNotFound
+    }
 
     public static class Direction
     {
@@ -30,6 +40,16 @@ public class PathFinder : MonoBehaviour
         LoadBlocks();
         ColorBlocks();
         StartCoroutine(PathFind());
+        _enemyMovement = FindObjectOfType<EnemyMovement>();
+    }
+
+    private void Update()
+    {
+        if (_state == State.PathFound)
+        {
+            HandlePath();
+            _enemyMovement.SetPath(_path);
+        }
     }
 
     private void LoadBlocks()
@@ -45,7 +65,6 @@ public class PathFinder : MonoBehaviour
             
             _grid.Add(waypoint.GetGridPosition(), waypoint); 
         }
-        Debug.Log("Loaded " + _grid.Count + " blocks");
     }
 
     public void ColorBlocks()
@@ -66,13 +85,14 @@ public class PathFinder : MonoBehaviour
         foreach (var direction in Direction.Directions)
         {
             var explorePosition = startPos + direction;
-            if (_grid.ContainsKey(explorePosition) && !_exploredGrid.ContainsKey(explorePosition))
-            {
-                Debug.Log("Exploring: " + explorePosition);
-                _grid[explorePosition].SetTopMaterial(materialExplore);
-                _queue.Enqueue(_grid[explorePosition]);
-                _exploredGrid[explorePosition] = waypoint;
-            }
+            
+            // Skip if the neighbor is already explored or non-existent
+            if (!_grid.ContainsKey(explorePosition) || _exploredGrid.ContainsKey(explorePosition)) continue;
+            
+            var neighbor = _grid[explorePosition];
+            neighbor.SetTopMaterial(materialExplore);
+            _queue.Enqueue(neighbor);
+            _exploredGrid[explorePosition] = waypoint;
         }
     }
 
@@ -87,13 +107,25 @@ public class PathFinder : MonoBehaviour
             var nextWaypoint = _queue.Dequeue();
             if (nextWaypoint == pathEnd)
             {
-                Debug.Log("Path found!");
-                _isRunning = false;
+                _state = State.PathFound;
                 yield break;
             }
             ExploreNeighbors(nextWaypoint);
         }
         Debug.Log("Path not found :(");
-        _isRunning = false;
+        _state = State.PathNotFound;
+    }
+
+    private void HandlePath()
+    {
+        var nextWaypoint = pathEnd;
+        _path.Add(pathEnd);
+        while (nextWaypoint != pathStart && _exploredGrid[nextWaypoint.GetGridPosition()] != null)
+        {
+            nextWaypoint = _exploredGrid[nextWaypoint.GetGridPosition()];
+            _path.Add(nextWaypoint);
+        }
+        _path.Reverse();
+        _state = State.Idle;
     }
 }

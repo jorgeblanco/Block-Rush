@@ -6,21 +6,19 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private List<Waypoint> path;
     [SerializeField] private float dwellTime = 1f;
-    
-    void Start()
+
+    public void SetPath(List<Waypoint> newPath)
     {
+        path = newPath;
         StartCoroutine(EnemyPatrol());
     }
 
     private IEnumerator EnemyPatrol()
     {
-        Debug.Log("Starting patrol");
         foreach (var waypoint in path)
         {
             transform.position = waypoint.transform.position;
-        Debug.Log("Visiting block: " + waypoint.name);
             yield return new WaitForSeconds(dwellTime);
         }
-        Debug.Log("Ending patrol");
     }
 }
