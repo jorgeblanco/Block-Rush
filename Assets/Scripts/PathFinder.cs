@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    [SerializeField] private Waypoint pathStart;
+    [SerializeField] private Waypoint pathEnd;
+    [SerializeField] private Color colorStart;
+    [SerializeField] private Color colorEnd;
     private readonly Dictionary<Vector2Int, Waypoint> _grid = new Dictionary<Vector2Int, Waypoint>();
     
     void Start()
@@ -26,5 +30,14 @@ public class PathFinder : MonoBehaviour
             _grid.Add(waypoint.GetGridPosition(), waypoint); 
         }
         Debug.Log("Loaded " + _grid.Count + " blocks");
+        
+        ColorBlocks();
+    }
+
+    public void ColorBlocks()
+    {
+        // Color blocks
+        pathStart.SetTopColor(colorStart);
+        pathEnd.SetTopColor(colorEnd);
     }
 }

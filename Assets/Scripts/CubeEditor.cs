@@ -12,6 +12,7 @@ public class CubeEditor : MonoBehaviour
     private Vector2Int _gridPosition;
     private Waypoint _waypoint;
     private int _gridSize;
+    private PathFinder _pathFinder;
 
     void Awake()
     {
@@ -31,9 +32,11 @@ public class CubeEditor : MonoBehaviour
         _gridSize = _waypoint.GetGridSize();
         _gridPosition = _waypoint.GetGridPosition();
         _text = GetComponentInChildren<TextMeshPro>();
+        _pathFinder = FindObjectOfType<PathFinder>();
         
         SnapToGrid();
         UpdateLabel();
+        _pathFinder.ColorBlocks();
     }
 
     private void UpdateLabel()
