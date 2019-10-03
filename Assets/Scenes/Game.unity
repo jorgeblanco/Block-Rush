@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -310,6 +315,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -433,6 +443,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f704fc3ab099c6e4391f5ab2f5e0371e, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -532,6 +547,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -649,6 +669,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -754,9 +779,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathStart: {fileID: 1184255541}
-  pathEnd: {fileID: 366239583}
+  pathEnd: {fileID: 1271805372}
   materialStart: {fileID: 2100000, guid: 83741c088ca49a04aa7a5b788cc51410, type: 2}
   materialEnd: {fileID: 2100000, guid: f704fc3ab099c6e4391f5ab2f5e0371e, type: 2}
+  materialDefault: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
   materialExplore: {fileID: 2100000, guid: 59931b6dd3825764fb7a44a9feeb960e, type: 2}
 --- !u!4 &1465698074 stripped
 Transform:
@@ -831,6 +857,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -934,7 +965,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f704fc3ab099c6e4391f5ab2f5e0371e, type: 2}
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -1058,6 +1089,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -1169,6 +1205,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -1286,6 +1327,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8499418738601574569, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a5b2269d42bdf448cbf08ef222909a, type: 2}
     - target: {fileID: 4150702109469109953, guid: 8a4e685556ce1d84197d0aee53e8e9e6,
         type: 3}
       propertyPath: m_Mesh
@@ -1360,6 +1406,11 @@ PrefabInstance:
       propertyPath: path.Array.data[5]
       value: 
       objectReference: {fileID: 366239583}
+    - target: {fileID: 2311336065413317205, guid: ba5644a229e44ae458a5e65b9a8803ef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7132777265242669601, guid: ba5644a229e44ae458a5e65b9a8803ef,
         type: 3}
       propertyPath: m_Name

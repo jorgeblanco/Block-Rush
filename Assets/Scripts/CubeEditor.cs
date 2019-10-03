@@ -13,20 +13,13 @@ public class CubeEditor : MonoBehaviour
     private Waypoint _waypoint;
     private int _gridSize;
     private PathFinder _pathFinder;
-
-    void Awake()
-    {
-        // TODO: This doesn't work for caching the TMP object
-        _text = GetComponentInChildren<TextMeshPro>();
-        if (_text == null)
-        {
-            Debug.Log("Cannot find text element");
-        }
-
-    }
+    private bool _ranOnce;
 
     void Update()
     {
+        // Skip if playing
+        if(Application.isPlaying && _ranOnce){return;}
+        
         // Setting up the variables
         _waypoint = GetComponent<Waypoint>();
         _gridSize = _waypoint.GetGridSize();
@@ -37,6 +30,8 @@ public class CubeEditor : MonoBehaviour
         SnapToGrid();
         UpdateLabel();
         _pathFinder.ColorBlocks();
+
+        _ranOnce = true;
     }
 
     private void UpdateLabel()
