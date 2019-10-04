@@ -17,7 +17,8 @@ public class PathFinder : MonoBehaviour
     private State _state = State.PathFinding;
     private readonly List<Waypoint> _path = new List<Waypoint>();
     private EnemyMovement _enemyMovement;
-    
+    [SerializeField] private float delay = 0f;
+
     enum State
     {
         Idle,
@@ -54,7 +55,7 @@ public class PathFinder : MonoBehaviour
 
     private void LoadBlocks()
     {
-        var waypoints = FindObjectsOfType<Waypoint>();
+        var waypoints = GetComponentsInChildren<Waypoint>();
         foreach (var waypoint in waypoints)
         {
             var gridPosition = waypoint.GetGridPosition();
@@ -103,7 +104,7 @@ public class PathFinder : MonoBehaviour
 
         while (_queue.Count > 0)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(delay);
             var nextWaypoint = _queue.Dequeue();
             if (nextWaypoint == pathEnd)
             {
