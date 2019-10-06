@@ -7346,12 +7346,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 57769964}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1778094618 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2752360855945668624, guid: b4a13fcddcab0ec43a97a9122fe97915,
-    type: 3}
-  m_PrefabInstance: {fileID: 422650665426386059}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1794098718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8965483313555165303, guid: 33280aa591dd4954581e0946e693a499,
@@ -8625,16 +8619,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6130547057101028771, guid: b4a13fcddcab0ec43a97a9122fe97915,
-        type: 3}
-      propertyPath: towerHead
-      value: 
-      objectReference: {fileID: 1778094618}
-    - target: {fileID: 6130547057101028771, guid: b4a13fcddcab0ec43a97a9122fe97915,
-        type: 3}
-      propertyPath: enemyTarget
-      value: 
-      objectReference: {fileID: 608166401}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4a13fcddcab0ec43a97a9122fe97915, type: 3}
 --- !u!1001 &1505429722938083040

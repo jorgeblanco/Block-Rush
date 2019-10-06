@@ -8,12 +8,28 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private List<Waypoint> path;
     [SerializeField] private float dwellTime = 1f;
 
-    public void SetPath(List<Waypoint> newPath)
+    private void Start()
     {
-        path = newPath;
-        StartCoroutine(EnemyPatrol());
+        StartCoroutine(GetPath());
     }
 
+    private IEnumerator GetPath()
+    {
+        PathFinder pathFinder = FindObjectOfType<PathFinder>();
+        while (true)
+        {
+            path = pathFinder.GetPath();
+            if (path == null)
+            {
+                yield return new WaitForSeconds(0);
+            }
+            else
+            {
+                StartCoroutine(EnemyPatrol());
+                yield break;
+            }
+        }
+    }
     private IEnumerator EnemyPatrol()
     {
         foreach (var waypoint in path)

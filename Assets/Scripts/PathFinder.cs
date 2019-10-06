@@ -16,14 +16,13 @@ public class PathFinder : MonoBehaviour
     private readonly Queue<Waypoint> _queue = new Queue<Waypoint>();
     private State _state = State.PathFinding;
     private readonly List<Waypoint> _path = new List<Waypoint>();
-    private EnemyMovement _enemyMovement;
     [SerializeField] private float delay = 0f;
 
     enum State
     {
-        Idle,
         PathFinding,
         PathFound,
+        PathStored,
         PathNotFound
     }
 
@@ -41,7 +40,6 @@ public class PathFinder : MonoBehaviour
         LoadBlocks();
         ColorBlocks();
         StartCoroutine(PathFind());
-        _enemyMovement = FindObjectOfType<EnemyMovement>();
     }
 
     private void Update()
@@ -49,8 +47,17 @@ public class PathFinder : MonoBehaviour
         if (_state == State.PathFound)
         {
             HandlePath();
-            _enemyMovement.SetPath(_path);
         }
+    }
+
+    public List<Waypoint> GetPath()
+    {
+        if (_state != State.PathStored)
+        {
+            return null;
+        }
+
+        return _path;
     }
 
     private void LoadBlocks()
@@ -127,6 +134,6 @@ public class PathFinder : MonoBehaviour
             _path.Add(nextWaypoint);
         }
         _path.Reverse();
-        _state = State.Idle;
+        _state = State.PathStored;
     }
 }
