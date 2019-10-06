@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7deaaa7bf3b2dbe40b55044f465deb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerHead: {fileID: 0}
+  towerHead: {fileID: 2752360855945668624}
   enemyTarget: {fileID: 0}
+  towerRange: 40
 --- !u!1001 &2214840538293735961
 PrefabInstance:
   m_ObjectHideFlags: 0
