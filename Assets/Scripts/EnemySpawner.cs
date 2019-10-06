@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyToSpawn;
-    [SerializeField] private float spawnTime = 3f;
+    [SerializeField] private EnemyMovement enemyToSpawn;
+    [SerializeField] [Tooltip("In seconds")] private float spawnTime = 3f;
     [SerializeField] private int spawnCount = 10;
 
     void Start()
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
         while (spawnCount > 0)
         {
             var enemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
-            enemy.transform.parent = transform.parent;
+            enemy.transform.parent = transform;
             spawnCount--;
             yield return new WaitForSeconds(spawnTime);
         }
