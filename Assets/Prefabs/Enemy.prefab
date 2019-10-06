@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  dwellTime: 1
+  dwellTime: 0.75
 --- !u!1001 &5980319672811024576
 PrefabInstance:
   m_ObjectHideFlags: 0
