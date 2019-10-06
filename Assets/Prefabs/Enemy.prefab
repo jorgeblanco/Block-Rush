@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895840407794491292}
   - component: {fileID: 2311336065413317205}
+  - component: {fileID: 8676350085112081189}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -46,6 +47,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   dwellTime: 0.75
+  enemyHitPoints: 15
+  enemyExplosion: {fileID: 4916603199761729410, guid: 8e2b43652ec821d47a03692ab490ba71,
+    type: 3}
+--- !u!65 &8676350085112081189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132777265242669601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.7230306, y: 7.329298, z: 7.916679}
+  m_Center: {x: 0, y: 3.4992628, z: 0}
 --- !u!1001 &5980319672811024576
 PrefabInstance:
   m_ObjectHideFlags: 0
