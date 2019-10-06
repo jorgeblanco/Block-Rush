@@ -48,7 +48,9 @@ MonoBehaviour:
   path: []
   dwellTime: 0.75
   enemyHitPoints: 15
-  enemyExplosion: {fileID: 4916603199761729410, guid: 8e2b43652ec821d47a03692ab490ba71,
+  enemyExplosionFx: {fileID: 4916603199761729410, guid: 8e2b43652ec821d47a03692ab490ba71,
+    type: 3}
+  enemyDamageFx: {fileID: 3848191248214783285, guid: 52a4d5cc63f186546a388b3a44263f75,
     type: 3}
 --- !u!65 &8676350085112081189
 BoxCollider:
