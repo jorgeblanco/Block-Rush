@@ -60,6 +60,12 @@ public class PathFinder : MonoBehaviour
         return _path;
     }
 
+    public bool IsInPath(Waypoint waypoint)
+    {
+        // If the path hasn't been found, assume all blocks are in the path
+        return _state != State.PathStored || _path.Contains(waypoint);
+    }
+
     private void LoadBlocks()
     {
         var waypoints = GetComponentsInChildren<Waypoint>();

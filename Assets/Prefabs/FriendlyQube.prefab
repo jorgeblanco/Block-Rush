@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 8965483313555165303}
   - component: {fileID: 6836821812821789348}
   - component: {fileID: 6597446297603628117}
+  - component: {fileID: 1325587881449582357}
   m_Layer: 0
   m_Name: FriendlyQube
   m_TagString: Untagged
@@ -368,6 +369,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54acd9f4ab5d3e4296ba886540e5059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1325587881449582357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665233269129356084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.497459, y: 10.084156, z: 10.222755}
+  m_Center: {x: 0, y: -5.021845, z: 0}
 --- !u!1001 &905653513809806470
 PrefabInstance:
   m_ObjectHideFlags: 0
