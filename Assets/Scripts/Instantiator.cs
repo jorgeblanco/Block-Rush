@@ -23,7 +23,7 @@ public class Instantiator : MonoBehaviour
         Tower tower;
         if (_towers.Count < maxNoOfTowers)
         {
-            tower = Instantiate(selectedTower);
+            tower = Instantiate(selectedTower, transform);
         }
         else
         {
