@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  dwellTime: 0.75
+  dwellTime: 0.5
 --- !u!114 &7047671783867624927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,8 +77,12 @@ MonoBehaviour:
   enemyHitPoints: 15
   enemyExplosionFx: {fileID: 4916603199761729410, guid: 8e2b43652ec821d47a03692ab490ba71,
     type: 3}
+  enemyDeathFx: {fileID: 1929956291960174, guid: 1a51bfda454239a41afb7dee687c6ac0,
+    type: 3}
   enemyDamageFx: {fileID: 3848191248214783285, guid: 52a4d5cc63f186546a388b3a44263f75,
     type: 3}
+  damageToEnemy: 1
+  damageToBase: 10
 --- !u!65 &8676350085112081189
 BoxCollider:
   m_ObjectHideFlags: 0

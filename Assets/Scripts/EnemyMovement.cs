@@ -6,10 +6,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private List<Waypoint> path;
-    [SerializeField] private float dwellTime = 1f;
+    [SerializeField] private float dwellTime = 0.5f;
+
+    private EnemyDamage _enemyDamage;
 
     private void Start()
     {
+        _enemyDamage = GetComponent<EnemyDamage>();
         StartCoroutine(GetPath());
     }
 
@@ -37,5 +40,6 @@ public class EnemyMovement : MonoBehaviour
             transform.position = waypoint.transform.position;
             yield return new WaitForSeconds(dwellTime);
         }
+        _enemyDamage.ExplodeEnemy();
     }
 }

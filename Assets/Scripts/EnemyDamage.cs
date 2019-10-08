@@ -1,15 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private int enemyHitPoints = 15;
     [SerializeField] private GameObject enemyExplosionFx;
+    [SerializeField] private GameObject enemyDeathFx;
     [SerializeField] private GameObject enemyDamageFx;
-    private int _damage = 1;
-    
+    [SerializeField] private int damageToEnemy = 1;
+    [SerializeField] private int damageToBase = 10;
+    private Base _base;
+
+    private void Start()
+    {
+        _base = FindObjectOfType<Base>();
+    }
+
     private void OnParticleCollision(GameObject otherCollider)
     {
-        DamageEnemy(_damage, otherCollider.transform);  //todo: get damage from colliding object
+        DamageEnemy(damageToEnemy, otherCollider.transform);  //todo: get damage from colliding object
     }
 
     public void DamageEnemy(int damage, Transform damageTransform)
@@ -29,7 +38,14 @@ public class EnemyDamage : MonoBehaviour
 
     private void DestroyEnemy()
     {
+        Instantiate(enemyDeathFx, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    public void ExplodeEnemy()
+    {
         Instantiate(enemyExplosionFx, transform.position, Quaternion.identity);
+        _base.DamageBase(damageToBase);
         Destroy(gameObject);
     }
 }
