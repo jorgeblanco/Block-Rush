@@ -21,5 +21,6 @@ public class EnemySpawner : MonoBehaviour
             spawnCount--;
             yield return new WaitForSeconds(spawnTime);
         }
+        Debug.Log("You win!");
     }
 }

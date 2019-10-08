@@ -3,17 +3,23 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] private int enemyHitPoints = 15;
+    [Header("Particles")]
     [SerializeField] private GameObject enemyExplosionFx;
     [SerializeField] private GameObject enemyDeathFx;
     [SerializeField] private GameObject enemyDamageFx;
+    [Header("Configuration")]
+    [SerializeField] private int enemyHitPoints = 15;
     [SerializeField] private int damageToEnemy = 1;
     [SerializeField] private int damageToBase = 10;
+    [SerializeField] private int enemyScore;
+    
     private Base _base;
+    private GameState _gameState;
 
     private void Start()
     {
         _base = FindObjectOfType<Base>();
+        _gameState = FindObjectOfType<GameState>();
     }
 
     private void OnParticleCollision(GameObject otherCollider)
@@ -39,6 +45,7 @@ public class EnemyDamage : MonoBehaviour
     private void DestroyEnemy()
     {
         Instantiate(enemyDeathFx, transform.position, Quaternion.identity);
+        _gameState.AddToScore(enemyScore);
         Destroy(gameObject);
     }
 

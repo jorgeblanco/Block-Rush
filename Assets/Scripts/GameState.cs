@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI score;
+    
     private bool _shouldReload;
+    private int _score;
+
+    private void Start()
+    {
+        UpdateScore();
+    }
 
     private void Update()
     {
@@ -28,5 +37,16 @@ public class GameState : MonoBehaviour
         {
             _shouldReload = true;
         }
+    }
+
+    public void AddToScore(int scoreToAdd)
+    {
+        _score += scoreToAdd;
+        UpdateScore();
+    }
+
+    private void UpdateScore()
+    {
+        score.SetText($"(Score] [{_score})");
     }
 }
